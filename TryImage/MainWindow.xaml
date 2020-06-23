@@ -1,0 +1,57 @@
+﻿<Window x:Class="TryImage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TryImage"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        SizeToContent="WidthAndHeight" SizeChanged="Window_SizeChanged" MinWidth="620" MinHeight="480" StateChanged="Window_StateChanged" >
+    <Grid x:Name="MainGrid" Background="#FF423535" SizeChanged="MainGrid_SizeChanged" Width="1912" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="Grid1" Width="955*"/>
+            <ColumnDefinition x:Name="Grid2" Width="315*" MaxWidth="314"/>
+            <ColumnDefinition x:Name="Grid3" MaxWidth="214" Width="214*"/>
+            <ColumnDefinition MaxWidth="214" Width="214*"/>
+            <ColumnDefinition MaxWidth="214" Width="214*"/>
+
+        </Grid.ColumnDefinitions>
+        <Image x:Name="Image1" Height="1029" Width="934" Margin="10,10,0,0" MinWidth="100" MinHeight="100"/>
+
+        <ListBox x:Name="StateCheckBox" Margin="3,134,0,0" MinHeight="268" MinWidth="100" Grid.Column="4" FontSize="20" MaxWidth="207" Grid.IsSharedSizeScope="True" VerticalAlignment="Top" Height="895" HorizontalAlignment="Left" Width="207"/>
+        <ListBox x:Name="SupEventCheck" Margin="4,93,4,0" MinHeight="268" MinWidth="100" Grid.Column="3" SelectionChanged="SupEventCheck_SelectionChanged" FontSize="20" MaxWidth="207" Grid.IsSharedSizeScope="True" VerticalAlignment="Top" Height="936" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <Grid Grid.Column="2" Margin="3,10,4,10">
+            <ListBox x:Name="BaseEventCheck" Margin="1,83,0,0" MinHeight="268" MinWidth="100" SelectionChanged="BaseEventCheck_SelectionChanged" FontSize="20" MaxWidth="207" Grid.IsSharedSizeScope="True" IsSynchronizedWithCurrentItem="True" VerticalAlignment="Top" Height="936"/>
+            <Button x:Name="ButRemove" Content="remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="207" RenderTransformOrigin="0.271,-3.9" Height="33" FontSize="20" Click="ButRemove_Click" MinWidth="40" MinHeight="20" MaxWidth="207"/>
+            <Button x:Name="ButAdd" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="49" Margin="0,36,0,0" Height="42" Click="ButAdd_Click" MinWidth="10" MinHeight="10" MaxWidth="49"/>
+            <TextBox x:Name="NomAct" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="Base" VerticalAlignment="Top" Width="154" Margin="53,36,0,0" FontSize="20" MinWidth="40" MinHeight="20" MaxWidth="155"/>
+
+        </Grid>
+        <Grid Grid.Column="1" Margin="10,21,205,-1" Grid.ColumnSpan="2">
+            <Button x:Name="ButOpen" Content="Open Image" Click="ButOpen_Click" FontSize="20" HorizontalAlignment="Left" MinWidth="40" MinHeight="30" Width="156" RenderTransformOrigin="0.439,1.97" VerticalAlignment="Top" Height="33"/>
+            <Button x:Name="ButSave" Content="Save" Width="156" FontSize="20" Click="ButSave_Click" HorizontalAlignment="Right" MinHeight="30" MinWidth="40" VerticalAlignment="Top" Height="33"/>
+            <Button x:Name="ButOpenFolder" Content="Open Folder Source " HorizontalAlignment="Right" Height="30" Margin="0,81,2,0" VerticalAlignment="Top" Width="311" FontSize="20" Click="ButOpenFolder_Click" MinWidth="100" MinHeight="30"/>
+            <Button x:Name="ButNext" Content="Next" HorizontalAlignment="Right" Height="48" Margin="0,245,44,0" VerticalAlignment="Top" Width="214" FontSize="20" Click="ButNext_Click" MinWidth="40" MinHeight="14"/>
+            <Button x:Name="ButNextRename" Content="Next And Rename" HorizontalAlignment="Right" Height="106" Margin="0,298,44,0" VerticalAlignment="Top" Width="214" FontSize="20" Click="ButNextRename_Click" MinWidth="40" MinHeight="16"/>
+            <Button x:Name="ButRename" Content="Rename" HorizontalAlignment="Right" Height="46" Margin="0,194,44,0" VerticalAlignment="Top" Width="214" FontSize="20" Click="ButRename_Click" MinHeight="20" MinWidth="37"/>
+            <Button x:Name="ButOpenFolderDest" Content="Open Folder Destination" HorizontalAlignment="Right" Height="30" Margin="0,111,2,0" VerticalAlignment="Top" Width="311" FontSize="20" Click="ButOpenFolderDest_Click" MinWidth="100" MinHeight="30" />
+            <Grid HorizontalAlignment="Right" Height="48" Margin="0,443,44,0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" MinWidth="40" MinHeight="20" VerticalAlignment="Top" Width="214">
+                <RadioButton Content="Move&#xA;" Margin="136,10,10,0" FontSize="20" Height="28" Background="White" Width="68" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="40" MinHeight="20"/>
+                <RadioButton x:Name="RadCp" Content="Copy&#xA;" Margin="10,10,135,0" FontSize="20" Height="28" Width="69" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="40" MinHeight="30" />
+            </Grid>
+            <Button x:Name="ButAbout" Content="About" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="214" Margin="55,0,0,10" Height="30" MinWidth="40" MinHeight="20" FontSize="20" Click="ButAbout_Click" VerticalContentAlignment="Bottom"/>
+        </Grid>
+        <TextBox x:Name="NomActEvent" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="Event" VerticalAlignment="Top" Width="153" Margin="58,46,0,0" FontSize="20" MinWidth="40" MinHeight="20" Grid.Column="3" MaxWidth="155"/>
+        <Button x:Name="ButRemoveEvent" Content="remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="207" Margin="4,10,0,0" RenderTransformOrigin="0.271,-3.9" Height="33" FontSize="20" Click="ButRemoveEvent_Click" MinWidth="40" MinHeight="20" Grid.Column="3" MaxWidth="207"/>
+        <Button x:Name="ButAddEvent" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="49" Margin="4,46,0,0" Height="42" Click="ButAddEvent_Click" MinWidth="10" MinHeight="10" Grid.Column="3" MaxWidth="49"/>
+        <Button x:Name="ButRemoveState" Content="remove" Margin="3,10,0,0" RenderTransformOrigin="0.271,-3.9" FontSize="20" Click="ButRemoveState_Click" MinWidth="40" MinHeight="20" Grid.Column="4" VerticalAlignment="Top" Height="33" HorizontalAlignment="Left" Width="207" MaxWidth="207"/>
+        <TextBox x:Name="NomActState" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="State of slave" VerticalAlignment="Top" Width="155" Margin="55,46,0,0" FontSize="20" MinHeight="20" MinWidth="40" Grid.Column="4" MaxWidth="155"/>
+        <Button x:Name="ButAddState" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="49" Margin="3,46,0,0" Height="42" Click="ButAddState_Click" MinHeight="10" MinWidth="10" Grid.Column="4"/>
+        <Button x:Name="ButUnselect" Content="Unselect" HorizontalAlignment="Left" Height="43" Margin="3,91,0,0" Width="207" FontSize="20" Click="ButUnselect_Click" MinHeight="20" MinWidth="40" Grid.Column="4" VerticalAlignment="Top"/>
+
+    </Grid>
+
+</Window>
