@@ -163,7 +163,9 @@ namespace TryImage
                 donnee.Base[6].Add(new DataS("Visitation"));
                 donnee.Base[6].Add(new DataS("Wounded"));
                 donnee.Base[6].Add(new DataS("Onsen"));
-                
+
+                ButCountImage.Content = "  Count all image in" + Environment.NewLine + "the destination folder";
+
             }
            
             RadCp.IsChecked = true;
@@ -533,7 +535,7 @@ namespace TryImage
                     else
                     { System.Windows.Forms.MessageBox.Show("Destionation folder is null or don't exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
 
-                     file++;
+                    file++;
                     if (file == ListFile.Length)
                     { System.Windows.Forms.MessageBox.Show(" End of image", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
 
@@ -565,8 +567,8 @@ namespace TryImage
         {
 
 
-          MainGrid.Width = ActualWidth;
-          MainGrid.Height = ActualHeight;
+        //  MainGrid.Width = ActualWidth;
+        //  MainGrid.Height = ActualHeight;
 
 
         }
@@ -576,11 +578,7 @@ namespace TryImage
             
         }
 
-        private void MainGrid_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-
-        }
-
+      
         
     }
 

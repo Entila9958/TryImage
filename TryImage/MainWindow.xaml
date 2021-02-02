@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow"
         SizeToContent="WidthAndHeight" SizeChanged="Window_SizeChanged" MinWidth="620" MinHeight="480" StateChanged="Window_StateChanged" >
-    <Grid x:Name="MainGrid" Background="#FF423535" SizeChanged="MainGrid_SizeChanged" Width="1912" Margin="0">
+    <Grid x:Name="MainGrid" Background="#FF423535" Width="1912" Margin="0">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -30,7 +30,7 @@
             <TextBox x:Name="NomAct" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="Base" VerticalAlignment="Top" Width="154" Margin="53,36,0,0" FontSize="20" MinWidth="40" MinHeight="20" MaxWidth="155"/>
 
         </Grid>
-        <Grid Grid.Column="1" Margin="10,21,205,-1" Grid.ColumnSpan="2">
+        <Grid Margin="1,21,0,-1" Grid.Column="1">
             <Button x:Name="ButOpen" Content="Open Image" Click="ButOpen_Click" FontSize="20" HorizontalAlignment="Left" MinWidth="40" MinHeight="30" Width="156" RenderTransformOrigin="0.439,1.97" VerticalAlignment="Top" Height="33"/>
             <Button x:Name="ButSave" Content="Save" Width="156" FontSize="20" Click="ButSave_Click" HorizontalAlignment="Right" MinHeight="30" MinWidth="40" VerticalAlignment="Top" Height="33"/>
             <Button x:Name="ButOpenFolder" Content="Open Folder Source " HorizontalAlignment="Right" Height="30" Margin="0,81,2,0" VerticalAlignment="Top" Width="311" FontSize="20" Click="ButOpenFolder_Click" MinWidth="100" MinHeight="30"/>
@@ -43,6 +43,7 @@
                 <RadioButton x:Name="RadCp" Content="Copy&#xA;" Margin="10,10,135,0" FontSize="20" Height="28" Width="69" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="40" MinHeight="30" />
             </Grid>
             <Button x:Name="ButAbout" Content="About" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="214" Margin="55,0,0,10" Height="30" MinWidth="40" MinHeight="20" FontSize="20" Click="ButAbout_Click" VerticalContentAlignment="Bottom"/>
+            <Button x:Name="ButCountImage" Content="Count all image in  the destination folder" HorizontalAlignment="Left" Height="99" Margin="55,591,0,0" VerticalAlignment="Top" Width="214" FontSize="20" TextOptions.TextHintingMode="Animated"/>
         </Grid>
         <TextBox x:Name="NomActEvent" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="Event" VerticalAlignment="Top" Width="153" Margin="58,46,0,0" FontSize="20" MinWidth="40" MinHeight="20" Grid.Column="3" MaxWidth="155"/>
         <Button x:Name="ButRemoveEvent" Content="remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="207" Margin="4,10,0,0" RenderTransformOrigin="0.271,-3.9" Height="33" FontSize="20" Click="ButRemoveEvent_Click" MinWidth="40" MinHeight="20" Grid.Column="3" MaxWidth="207"/>
@@ -50,7 +51,7 @@
         <Button x:Name="ButRemoveState" Content="remove" Margin="3,10,0,0" RenderTransformOrigin="0.271,-3.9" FontSize="20" Click="ButRemoveState_Click" MinWidth="40" MinHeight="20" Grid.Column="4" VerticalAlignment="Top" Height="33" HorizontalAlignment="Left" Width="207" MaxWidth="207"/>
         <TextBox x:Name="NomActState" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="State of slave" VerticalAlignment="Top" Width="155" Margin="55,46,0,0" FontSize="20" MinHeight="20" MinWidth="40" Grid.Column="4" MaxWidth="155"/>
         <Button x:Name="ButAddState" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="49" Margin="3,46,0,0" Height="42" Click="ButAddState_Click" MinHeight="10" MinWidth="10" Grid.Column="4"/>
-        <Button x:Name="ButUnselect" Content="Unselect" HorizontalAlignment="Left" Height="43" Margin="3,91,0,0" Width="207" FontSize="20" Click="ButUnselect_Click" MinHeight="20" MinWidth="40" Grid.Column="4" VerticalAlignment="Top"/>
+        <Button x:Name="ButUnselect" Content="Unselect" HorizontalAlignment="Left" Height="41" Margin="3,93,0,0" Width="207" FontSize="20" Click="ButUnselect_Click" MinHeight="20" MinWidth="40" Grid.Column="4" VerticalAlignment="Top"/>
 
     </Grid>
 

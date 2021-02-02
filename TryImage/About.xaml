@@ -8,7 +8,7 @@
         Title="Window1" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450">
     <Grid Background="#FF423535">
         <Grid Background ="White" HorizontalAlignment="Left" Height="301" Margin="74,59,0,0" VerticalAlignment="Top" Width="649">
-            <TextBlock HorizontalAlignment="Left" Margin="27,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="281" Width="612" FontSize="20"><Run Text="Made by Entila &#xA; A student in belgium&#xA;&#xA;Made for Slavemaker&#xA;for easy renamming of entire folder&#xA;&#xA;&#xA;If you really want to contact me:&#xA;Steam:"/><Run Text=" "/><Run Text="Entila&#xA;Discord:"/><Run Text=" "/><Run Text="Entila, L'oiseau électricien.#7630"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="27,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="281" Width="612" FontSize="20"><Run Text="Made by Entila &#xA;A student in belgium&#xA;&#xA;Made for Slavemaker&#xA;for easy renamming of entire folder&#xA;&#xA;&#xA;If you really want to contact me:&#xA;Steam:"/><Run Text=" "/><Run Text="Entila&#xA;Discord:"/><Run Text=" "/><Run Text="Entila, L'oiseau électricien.#7630"/></TextBlock>
         </Grid>
 
     </Grid>
