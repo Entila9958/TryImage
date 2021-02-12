@@ -27,7 +27,7 @@ namespace TryImage
                 TheText.Text = "Please insert a source folder";
             else
                 TheText.Text = "Please insert a destination folder";
-            TheFolder.Text = str;
+            TheFolder.Text = str; 
             keepstr = str;
             
         }
