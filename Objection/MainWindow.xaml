@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Objection"
         mc:Ignorable="d"
-        Title="MainWindow" Height="75.656" Width="85.76" ResizeMode="CanMinimize">
+        Height="75.656" Width="162.26" ResizeMode="CanMinimize">
+    <Grid HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="156">
+        <Button Content="Add a&#xA;Objector" Click="Button_Click" Margin="0,0,78,0"/>
+        <Button Content="Convert" HorizontalAlignment="Left" Margin="78,0,0,0" VerticalAlignment="Top" Width="78" Height="47" Click="Button_Click_1"/>
+    </Grid>
 
-    <Button Content="Add a&#xD;&#xA;Objector" Click="Button_Click" Margin="-3,0"/>
+
 
 </Window>
