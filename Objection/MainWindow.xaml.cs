@@ -31,7 +31,7 @@ namespace Objection
             OpenFileDialog open = new OpenFileDialog
             {
                 InitialDirectory = @"C:\Users\alexi\Desktop\Objector",
-                Filter = "Image Files|*.png",
+                Filter = "Image Files|*.png,*.jpg,*.jpeg",
                 Multiselect = true
             };
             if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -50,6 +50,21 @@ namespace Objection
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+            OpenFileDialog open = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\Users\alexi\Desktop\Objector",
+                Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp",
+                Multiselect = true
+            };
+            if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+               ImageDep derp =  new ImageDep(open.FileNames);
+
+                derp.ShowDialog();
+
+
+
+            }
         }
 
         public void ExecuteCommandSync(object command)
