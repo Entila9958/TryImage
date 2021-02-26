@@ -30,6 +30,7 @@ namespace Objection
             ListOfPath = ListPath;
             ImaAff.Source = new BitmapImage(new Uri(ListOfPath[0]));
             v = 0;
+            TextBox.Text = System.IO.Path.GetFileNameWithoutExtension(ListOfPath[0]);
         }
 
 
@@ -37,16 +38,24 @@ namespace Objection
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ExecuteCommandSync("magick convert \"" + ListOfPath[v] + "\"   \"" + System.IO.Path.GetDirectoryName(ListOfPath[v]) + @"\" + System.IO.Path.GetFileNameWithoutExtension(ListOfPath[v]) + ".png\"");
 
-            MessageBox.Show("magick convert \"" + ListOfPath[v] + "\"   \"" + System.IO.Path.GetDirectoryName(ListOfPath[v]) + @"\" + System.IO.Path.GetFileNameWithoutExtension(ListOfPath[v]) + ".png\"");
+            ExecuteCommandSync("magick convert \"" + ListOfPath[v] + "\" -resize 256x256!  \"" + System.IO.Path.GetDirectoryName(ListOfPath[v]) + @"\Finish\" + TextBox.Text + ".png\"");
+
+         
 
 
 
             v++;
             if (ListOfPath.Length == v)
-                Close();
-            ImaAff.Source = new BitmapImage(new Uri(ListOfPath[0]));
+            {
+                this.Close();
+                return;
+            }
+               
+            
+                TextBox.Text = System.IO.Path.GetFileNameWithoutExtension(ListOfPath[v]);
+                ImaAff.Source = new BitmapImage(new Uri(ListOfPath[v]));
+            
         }
 
         public void ExecuteCommandSync(object command)
