@@ -6,10 +6,15 @@
         xmlns:local="clr-namespace:Objection"
         mc:Ignorable="d"
         Height="75.868" Width="237.01" ResizeMode="CanMinimize">
-    <Grid HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="156">
-        <Button Content="Add a&#xA;Objector" Click="Button_Click" Margin="0,0,78,0"/>
-        <Button Content="Convert" HorizontalAlignment="Left" Margin="78,0,0,0" VerticalAlignment="Top" Width="78" Height="47" Click="Button_Click_1"/>
-        <Button Content="Vpk" HorizontalAlignment="Left" Margin="156,0,-75,0" VerticalAlignment="Top" Width="75" Height="47" Click="Button_Click_2"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Add a&#xA;Objector" Click="Button_Click" Grid.Column="0" />
+        <Button Content="Convert" Click="Button_Click_1" Grid.Column="1"/>
+        <Button Content="Vpk" Click="Button_Click_2" Grid.Column="2"/>
     </Grid>
 
 

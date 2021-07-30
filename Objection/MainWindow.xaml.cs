@@ -1,9 +1,10 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Drawing;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -14,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.IO;
-
+using System;
 
 namespace Objection
 {
@@ -33,12 +34,12 @@ namespace Objection
             OpenFileDialog open = new OpenFileDialog
             {
                 InitialDirectory = @"C:\Users\alexi\Desktop\Objector",
-                Filter = "Image Files|*.png;*.jpg;*.jpeg", 
+                Filter = "Image Files|*.png;*.jpg;*.jpeg",
                 Multiselect = true
             };
             if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                foreach(string a in open.FileNames)
+                foreach (string a in open.FileNames)
                 {
                     Directory.CreateDirectory(@"F:\Steam\steamapps\common\Team Fortress 2\tf\custom\" + System.IO.Path.GetFileNameWithoutExtension(a) + @"\scripts\items\custom_texture_blend_layers");
                     File.Move(a, @"F:\Steam\steamapps\common\Team Fortress 2\tf\custom\" + System.IO.Path.GetFileNameWithoutExtension(a) + @"\scripts\items\custom_texture_blend_layers\paper_overlay.png");
@@ -60,7 +61,7 @@ namespace Objection
             };
             if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-               ImageDep derp =  new ImageDep(open.FileNames);
+                ImageDep derp = new ImageDep(open.FileNames);
 
                 derp.ShowDialog();
 
@@ -71,70 +72,72 @@ namespace Objection
 
         public void ExecuteCommandSync(object command)
         {
-           
-                // create the ProcessStartInfo using "cmd" as the program to be run,
-                // and "/c " as the parameters.
-                // Incidentally, /c tells cmd that we want it to execute the command that follows,
-                // and then exit.
-                System.Diagnostics.ProcessStartInfo procStartInfo =
-                    new System.Diagnostics.ProcessStartInfo("cmd", "/c " + command);
 
-                // The following commands are needed to redirect the standard output.
-                // This means that it will be redirected to the Process.StandardOutput StreamReader.
-                procStartInfo.RedirectStandardOutput = true;
-                procStartInfo.UseShellExecute = false;
-                // Do not create the black window.
-                procStartInfo.CreateNoWindow = false;
-                
+            // create the ProcessStartInfo using "cmd" as the program to be run,
+            // and "/c " as the parameters.
+            // Incidentally, /c tells cmd that we want it to execute the command that follows,
+            // and then exit.
+            System.Diagnostics.ProcessStartInfo procStartInfo =
+                new System.Diagnostics.ProcessStartInfo("cmd", "/c " + command);
+
+            // The following commands are needed to redirect the standard output.
+            // This means that it will be redirected to the Process.StandardOutput StreamReader.
+            procStartInfo.RedirectStandardOutput = true;
+            procStartInfo.UseShellExecute = false;
+            // Do not create the black window.
+            procStartInfo.CreateNoWindow = false;
+
             // Now we create a process, assign its ProcessStartInfo and start it
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
             proc.StartInfo = procStartInfo;
-      
+
             proc.Start();
             // Get the output into a string
             string result = proc.StandardOutput.ReadToEnd();
-            
+
 
         }
         public void ExecuteCommandVpkSync(object command)
         {
-           
-                // create the ProcessStartInfo using "cmd" as the program to be run,
-                // and "/c " as the parameters.
-                // Incidentally, /c tells cmd that we want it to execute the command that follows,
-                // and then exit.
-                System.Diagnostics.ProcessStartInfo procStartInfo =
-                    new System.Diagnostics.ProcessStartInfo();
 
-                // The following commands are needed to redirect the standard output.
-                // This means that it will be redirected to the Process.StandardOutput StreamReader.
-                procStartInfo.RedirectStandardOutput = true;
-                procStartInfo.UseShellExecute = false;
-                // Do not create the black window.
-                procStartInfo.CreateNoWindow = true;
-                procStartInfo.FileName = @"F:\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe";
-                procStartInfo.Arguments = command.ToString();
+            // create the ProcessStartInfo using "cmd" as the program to be run,
+            // and "/c " as the parameters.
+            // Incidentally, /c tells cmd that we want it to execute the command that follows,
+            // and then exit.
+            System.Diagnostics.ProcessStartInfo procStartInfo =
+                new System.Diagnostics.ProcessStartInfo();
+
+            // The following commands are needed to redirect the standard output.
+            // This means that it will be redirected to the Process.StandardOutput StreamReader.
+            procStartInfo.RedirectStandardOutput = true;
+            procStartInfo.UseShellExecute = false;
+            // Do not create the black window.
+            procStartInfo.CreateNoWindow = true;
+            procStartInfo.FileName = @"F:\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe";
+            procStartInfo.Arguments = command.ToString();
             // Now we create a process, assign its ProcessStartInfo and start it
             System.Diagnostics.Process proc = new System.Diagnostics.Process();
             proc.StartInfo = procStartInfo;
             proc.Start();
             // Get the output into a string
             string result = proc.StandardOutput.ReadToEnd();
-            
+
 
         }
 
-      
+
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             //F:\Steam\steamapps\common\Team Fortress 2\tf\custom
             string[] dirs = Directory.GetDirectories(@"F:\Steam\steamapps\common\Team Fortress 2\tf\custom", "*", SearchOption.TopDirectoryOnly);
-            
-            foreach(string v in dirs)
+
+            foreach (string v in dirs)
             {
                 ExecuteCommandVpkSync("\"" + v + "\"");
-               // System.Windows.Forms.MessageBox.Show("\"" + @"F:\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" +"\" " + "\"" + v + "\"");
+                // System.Windows.Forms.MessageBox.Show("\"" + @"F:\Steam\steamapps\common\Team Fortress 2\bin\vpk.exe" +"\" " + "\"" + v + "\"");
             }
         }
+
+
     }
 }
